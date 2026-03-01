@@ -1,0 +1,17 @@
+class Solution {
+    
+    public int solution(int a, int b) {
+        int answer1 = Integer.parseInt(Integer.toString(a) + Integer.toString(b));  # 입력된 a,b를 문자열로 변환하여 연결 후 다시 숫자로 변환
+        int answer2 = Integer.parseInt(Integer.toString(b) + Integer.toString(a));  # 입력된 b,a를 문자열로 변환하여 연결 후 다시 숫자로 변환
+        int answer = 0;
+        
+        if (answer1 >= answer2) {  # a+b와 b+a가 같다면 a+b 반환
+            answer = answer1;
+        }
+        else {
+            answer = answer2;
+        }
+        
+        return answer;
+    }
+}
