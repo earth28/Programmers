@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        
+        HashMap<String, Integer> map = new HashMap<>();  // HashMap 사용
+        
+        for (String p : participant) {  // HashMap에 선수 추가, 등장 횟수 1 추가
+            map.put(p, map.getOrDefault(p,0) + 1);
+        }
+        
+        for (String c : completion) {  // HashMap에서 완주 선수 탐색 후 등장 횟수 1 감소
+            map.put(c, map.get(c) - 1);
+        }
+
+        // 반복문 사용하여 등장 횟수가 남아있는 선수 탐색
+        for (String key : map.keySet()) {
+            if (map.get(key) > 0) {
+                answer = key;
+                break;
+            }
+        }
+            
+        return answer;
+    }
+}
