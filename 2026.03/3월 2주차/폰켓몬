@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = 0;
+        
+        HashSet<Integer> set = new HashSet<>();
+        
+        for (int i : nums) {    // HashSet에 원소 추가
+            set.add(i);
+        }
+        
+        // set.size와 배열 길이/2 중 작은 값이 answer
+        if (set.size() < nums.length / 2) {
+            answer = set.size();
+        }
+        else {
+            answer = nums.length / 2;
+        }
+        
+        return answer;
+    }
+}
