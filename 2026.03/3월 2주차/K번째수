@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
-        int[] answer = new int[commands.length];    // commnads.length만큼 배열 크기 지어
+        int[] answer = new int[commands.length];    // commnads.length만큼 배열 크기 지정
         
         // 지정 크기만큼 배열 복사해서 array1에 임시 저장. answer 배열에 k번째 수 저장
         for (int i = 0; i < commands.length; i++) {
