@@ -1,0 +1,17 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];    // commnads.length만큼 배열 크기 지어
+        
+        // 지정 크기만큼 배열 복사해서 array1에 임시 저장. answer 배열에 k번째 수 저장
+        for (int i = 0; i < commands.length; i++) {
+            // copyOfRange의 범위는 start ≤ index < end, 즉 end는 포함하지 않음
+            int[] array1 = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]);
+            Arrays.sort(array1);
+            answer[i] = array1[commands[i][2] - 1];
+        }
+        
+        return answer;
+    }
+}
